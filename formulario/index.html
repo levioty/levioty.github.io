@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Formulário</h1>
+        <form>
+            <fieldset>
+                <legend>Tipos de Campos</legend>
+                <!-- Sintaxe para rotulo implicito -->
+                <label>Texto:<input type="text" name="texto" placeholder="texto livre"></label>
+                <br>
+                <label>Busca:<input type="search" name="busca" placeholder="campo para busca"></label>
+                <br>
+                <label>Telefone:<input type="tel" name="telefone" placeholder="telefone"></label>
+                <br>
+                <label>URL:<input type="url" name="url" placeholder="endereço na web"></label>
+                <br>
+                <label>Email:<input type="url" name="email" placeholder="endereço de email"></label>
+                <br>
+                <label>Senha:<input type="password" name="senha" placeholder="sua senha"></label>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Data e Hora</legend>
+                <label>Data:<input type="date" name="senha" placeholder="escolha uma data"></label>
+                <label>Hora:<input type="time" name="senha" placeholder="escolha uma hora"></label>
+          
+            </fieldset>
+            
+            
+            
+            <fieldset>
+                <legend>Número</legend>
+                <label>Número:<input type="number" name="senha" placeholder="escolha um data"></label>
+                <label>Intervalo:<input type="range" name="senha" placeholder="escolha uma hora"></label>
+                <label>Cor:<input type="color" name="senha" placeholder="escolha uma cor"></label>
+          
+            </fieldset>
+            
+            
+            <fieldset>
+                <legend>Lista de Tarefa</legend>
+                <label>Lavar o carro:<input type="checkbox" name="senha" placeholder="escolha um data"></label>
+                <label>Fazer compras:<input type="checkbox" name="senha" placeholder="escolha uma hora"></label>
+                <label>Estudar:<input type="checkbox" name="senha" placeholder="escolha uma cor"></label>
+          
+            </fieldset>
+            
+            
+            <fieldset>
+                <legend>Qual é a capital da França?</legend>
+                <label>Nice:<input type="radio" name="senha" placeholder="escolha um data"></label>
+                <label>Lyon:<input type="radio" name="senha" placeholder="escolha uma hora"></label>
+                <label>Paris:<input type="radio" name="senha" placeholder="escolha uma cor"></label>
+          
+            </fieldset>
+            
+            <fieldset>
+                <legend>Botões</legend>
+                <label>Submit:<input type="submit" value="enviar"></label><br>
+                <label>Image:<input type="image" src="botao.png" width="50px" value="meu botão"></label><br>
+                <label>Reset:<input type="reset" value="limpar"></label><br>
+                <label>Botão:<input type="button" value="OK"></label><br>
+          
+            </fieldset>
+            
+            
+            <fieldset>
+                <legend>Atributos em comum</legend>
+                <label>Hidden:<input type="text" hidden ></label><br>
+                <label>Disabled:<input type="text" disabled value="desativado" ></label><br>
+                <label>Readonly:<input type="text" readonly value="Modo leitura" ></label><br>
+                <label>Required:<input type="text" required></label><br>
+                <label>Step, Min e max:<input type="number" min="10" step="1" max="20"></label><br>
+                
+                <button type="button" href="www.google.com">Meu botão</button>
+            </fieldset>
+            <br><br>
+            <fieldset>
+                <legend>Seleção</legend>
+                <label for="paises">Escolha um país:</label>
+                <select name="paises">
+                    <option value="">Escolha uma opção</option>
+                    <option value="arg">Argentina</option>
+                    <option value="bra">Brasil</option>
+                    <option value="uru">Uruguai</option>
+                </select>
+                
+                <label for="paises">Escolha um opção:</label>
+                <select>
+                    <optgroup label="Frutas">
+                        <option >Laranja</option>
+                        <option >Uva</option>
+                    </optgroup>
+                    <optgroup label="Cores">
+                        <option >Azul</option>
+                        <option >Verde</option>
+                    </optgroup>
+                </select>
+                <br>
+            </fieldset>
+            <br><br>
+            <fieldset>
+                <legend>Seleção</legend>
+                <label for="campo_paises">Escolha um país:</label>
+                <input id="campo_paises"type="text" list="paises">
+                <datalist id="paises">
+                    <option value="Argentina">
+                    <option value="Brasil">
+                    <option value="Uruguai">
+                </datalist>
+                <br><br>
+                <label> Observações <br>
+                <textarea rows="10" cols="30">Minhas observações...</textarea>
+                  
+                </label>
+            </fieldset>
+        </form>
+        <br><br><br><br>
+
+        <hr>
+
+
+        <h1>
+            Formulário
+        </h1>
+
+        <form>
+            <fieldset>
+                <legend>Login</legend>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" placeholder="email">
+                <br>
+                <label for="password">Senha:</label>
+                <input type="password" name="password" id="password" placeholder="senha">
+                <br>
+                
+                <input type="submit" name="submit" id="submit" placeholder="enviar">
+            </fieldset>
+        </form>
+
+        <h1>
+            Compromisso
+        </h1>
+
+        <form>
+            <fieldset>
+                <legend>Compromisso</legend>
+                <label for="compromisso">Nome do Compromisso:</label>
+                <input type="text" name="compromisso" placeholder="evento">
+                <br>
+                <label for="date">Data:</label>
+                <input type="date" name="date" placeholder="data">
+                <label for="time">Hora:</label>
+                <input type="time" name="time" placeholder="hora">
+                <br>
+                <label for="datalist">Observacoes:</label>
+                <textarea name="datalist" id="datalist" cols="30" rows="10"></textarea>
+                <br>
+                <input type="submit" name="save" placeholder="salvar">
+                <input type="reset" name="reset">
+            </fieldset>
+        </form>
+
+    </body>
+</html>
