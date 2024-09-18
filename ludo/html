@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Olá DOM</title>
+    <style>
+      .board {
+         margin: 0 auto;
+         border: 2px solid;
+         width: 50px;
+      }
+      .red {
+         background-color: red;
+      }
+      .white {
+         background-color: white;
+      }
+      .red-box {
+         background-color: #FF0000;
+         width: 250px;
+         height: 250px;
+         margin: 20% auto;
+         border: 1px solid;
+      }
+      .white-box {
+         background-color: white;
+         width: 150px;
+         height: 150px;
+         border: 1px solid #000;
+         margin: 20% auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+       <h1 style="text-align: center;"> LUDO </h1>
+    </header>
+    <div class="board"></div>
+    <div class="row"></div>
+    <div class="red-box"></div>
+    <div class="white-box"></div>
+      <div class="red-circle"></div>
+      <div class="red-circle"></div>
+      <div class="red-circle"></div>
+      <div class="red-circle"></div>
+  </body>
+</html>
