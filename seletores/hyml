@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Olá DOM</title>
+    <style>
+      td[titulo] {background-color: #D7BDBB; padding: 4px;}
+      
+      td[atividade~="dormir"] {background-color: purple;}
+      td[atividade~="importante"] {border: solid black 1px;}
+      td[atividade^="cafe"] {background-color: blue;}
+      td[atividade$="trabalhar"] {background-color: red;}
+      td[atividade*="almoco"] {font-weight: bold;}
+      td[atividade|="academia"] {background-color: darkgreen; padding: 4px; border: black 1px;}
+    </style>
+  </head>
+  <body>
+    <header>
+       <h1> Olá DOM </h1>
+    </header>
+    <main>
+      <p> Meu planejamento diário </span></p>
+      <table>
+        <tr>
+           <td titulo>Horário</td>
+           <td titulo>Compromisso</td>
+        </tr>
+        <tr>
+	   <td atividade="dormir importante">06:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td atividade="dormir importante">07:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td atividade="importante">08:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td atividade="cafe">09:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td atividade="cafedamanha">10:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td atividade="trabalhar">11:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td atividade="importante trabalhar">12:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td atividade="importante almoco trabalhar">13:00</td>
+           <td>Trabalhar</td>
+        </tr>
+        <tr>
+	   <td atividade="academia">14:00</td>
+           <td atividade="academia">Academia</td>
+        </tr>
+        <tr>
+	   <td>15:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td>16:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td>17:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td>18:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td>19:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td>20:00</td>
+           <td></td>
+        </tr>        
+        <tr>
+	   <td>21:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td>22:00</td>
+           <td></td>
+        </tr>
+        <tr>
+	   <td>23:00</td>
+           <td></td>
+        </tr>
+      </table>
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>
