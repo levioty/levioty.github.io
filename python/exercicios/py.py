@@ -68,6 +68,40 @@
 #        soma = soma + i**3
 #print(soma)
 
+# a = int(input('numero: '))
+# b = int(input('numero 2: '))
+# soma = 0
+# if a > b:
+#   a, b = b, a
+
+# for i in range(a + 1, b):
+#   if i % 2 == 0:
+#     soma = soma + i**3
+
+# print(soma)
+
+# Faça um programa que receba um valor que foi depositado na poupança e exiba o valor com rendimento mês a mês durante o período de um ano. Considere fixo o juros da poupança em 0,5% a. m.
+
+# a = float(input('valor depositado: '))
+# b = 0
+
+# for i in range(1, 13):
+#   a = a * 0.005 + a
+#   print(a)
+
+# Número primo é aquele que só é divisível por ele mesmo e pelo número 1. Faça um programa que peça um número inteiro ao usuário e determine se o número informado é primo ou não.
+
+# a = int(input('numero: '))
+# b = 0
+# for i in range(2, a):
+#   if a % i == 0:
+#     b += 1
+# if b == 0:
+#   print('primo')
+# else:
+#   print('não primo')
+
+
 
 
 
