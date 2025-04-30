@@ -1,0 +1,15 @@
+Formas Normais
+
+Esquema da Lanchonete (#ChavePrimaria $ChaveEstrangeira)
+
+Lanchonete (Nome, #CNPJ, Endereço, Alvara, Inscrição Estadual, Data de abertura)
+
+Funcionarios (NomeFuncionario, #IDMatrícula, Data de admissão, IDCargo, $CargoSalario, Dependentes)
+
+Cargos (#IDCargo, CargoSalario, CargoDescriçao, CargoUltimoAumento, CargoQuantidadeFuncionarios, CargoQuantidadeEstagiarios)
+
+Pedidos (#IDPedido, $IDMatricula, DataPedido, ValorPedido, ValorTaxaGarçom, PedidoCPFCliente
+
+ItensPedido ($IDPedido, $IDItem, Quantidade, ValorUnitario, ValorDesconto, $PedidoCPFCliente
+
+Itens(#IDItem, DescriçaoItem, ValorItem, DescontoItem, ValidadeItem, FabricaçaoItem)
