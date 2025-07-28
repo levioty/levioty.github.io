@@ -1,0 +1,31 @@
+Crie um programa em Python que conte a quantidade de números primos em um intervalo informado pelo usuário.
+Por exemplo: 
+Entrada: 
+    inicio=2
+    fim=10.
+Saída: 
+    São 4 números primos: 2, 3, 5 e 7.
+
+
+Solução
+def contarPrimos():
+    inicio = int(input("Informe o início do intervalo:"))
+    fim = int(input("Informe o fim do intervalo:"))
+    qtdePrimos = 0
+    lista = []
+    for i in range(inicio,fim+1):
+        dividiu = False
+        for j in range(2, i):
+            if(i % j == 0):
+                dividiu = True
+                break
+        if not dividiu:
+            qtdePrimos = qtdePrimos + 1
+            lista.append(i)
+    
+    if qtdePrimos > 0:
+        print("Existem ",qtdePrimos," número(s) primo(s) no intervalo [",inicio,",",fim,"]. São eles: ",lista , sep="")
+    else:
+        print("Não existem números primos no intervalo [",inicio,",",fim,"].", sep="")
+
+contarPrimos()
