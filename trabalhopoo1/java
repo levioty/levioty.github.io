@@ -1,0 +1,204 @@
+import java.util.Scanner;
+
+public class candidato {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Nome do primeiro candidato: ");
+        String nome = scanner.nextLine();
+
+        System.out.println("Número de telefone do primeiro candidato: ");
+        String telefone = scanner.nextLine();
+
+        System.out.println("Nome: "+nome);
+        System.out.println("Telefone: "+telefone);
+
+        System.out.println("Nome do segundo candidato: ");
+        String nome2 = scanner.nextLine();
+
+        System.out.println("Número de telefone do segundo candidato: ");
+        String telefone2 = scanner.nextLine();
+
+        System.out.println("Nome: "+nome2);
+        System.out.println("Telefone: "+telefone2);
+
+        System.out.println("Nome do terceiro candidato: ");
+        String nome3 = scanner.nextLine();
+
+        System.out.println("Número de telefone do terceiro candidato: ");
+        String telefone3 = scanner.nextLine();
+
+        System.out.println("Nome: "+nome3);
+        System.out.println("Telefone: "+telefone3);
+
+        System.out.println("Nome do quarto candidato: ");
+        String nome4 = scanner.nextLine();
+
+        System.out.println("Número de telefone do quarto candidato: ");
+        String telefone4 = scanner.nextLine();
+
+        System.out.println("Nome: "+nome4);
+        System.out.println("Telefone: "+telefone4);
+
+        System.out.println("Nome do quinto candidato: ");
+        String nome5 = scanner.nextLine();
+
+        System.out.println("Número de telefone do quinto candidato: ");
+        String telefone5 = scanner.nextLine();
+
+        System.out.println("Nome: "+nome5);
+        System.out.println("Telefone: "+telefone5);
+
+
+        scanner.close();
+    }
+}
+
+
+
+
+
+SEGUNDO TESTE
+
+
+import java.util.Scanner;
+
+public class candidato {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] nomes = new String[5];
+        String[] numerovoto = new String[5];
+        int[] votos = new int[5];
+
+        for (int k = 0; k < 5; k++) {
+            System.out.print("Nome do candidato " + (k + 1) + ": ");
+            nomes[k] = scanner.nextLine();
+
+            System.out.print("Número do voto " + (k + 1) + ": ");
+            numerovoto[k] = scanner.nextLine();
+        }
+
+        System.out.print("Digite quantos moradores irão votar: ");
+        int moradores = Integer.parseInt(scanner.nextLine());
+
+        for (int i = 0; i < moradores; i++) {
+            System.out.println("\nMorador " + (i + 1) + ", vote em um candidato:");
+            for (int j = 0; j < 5; j++) {
+                System.out.println((j + 1) + " - " + nomes[j]);
+            }
+            System.out.print("Digite o número do candidato: ");
+            int voto = Integer.parseInt(scanner.nextLine());
+
+            if (voto >= 1 && voto <= 5) {
+                votos[voto - 1]++;
+            } else {
+                System.out.println("Voto inválido! Nenhum voto computado para essa tentativa.");
+
+                System.out.println("\nResultado da votação:");
+                for (int j = 0; j < 5; j++) {
+                    System.out.println(nomes[j] + " recebeu " + votos[j] + " voto(s).");
+                }
+
+                int maxVotos = votos[0];
+                int indiceVencedor = 0;
+                boolean empate = false;
+
+                for (int f = 1; f < 5; f++) {
+                    if (votos[i] > maxVotos) {
+                        maxVotos = votos[i];
+                        indiceVencedor = i;
+                        empate = false;
+                    } else if (votos[i] == maxVotos) {
+                        empate = true;
+                    }
+                }
+
+                if (empate) {
+                    System.out.println("Houve um empate na votação.");
+                } else {
+                    System.out.println("O vencedor é: " + nomes[indiceVencedor] + " com " + maxVotos + " voto(s).");
+                }
+
+                System.out.println("\nLista de candidatos:");
+                for (int l = 0; l < 5; l++) {
+                    System.out.println("Candidato " + (l + 1) + ": " + nomes[l] + " - Telefone: " + numerovoto[l]);
+                }
+
+                scanner.close();
+            }
+        }
+    }
+}
+
+
+
+TERCEIRO TESTE
+
+
+import java.util.Scanner;
+
+public class candidato {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] nomes = new String[5];
+        String[] telefones = new String[5];
+        int[] votos = new int[5];
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Digite o nome do candidato " + (i + 1) + ": ");
+            nomes[i] = scanner.nextLine();
+
+            System.out.print("Digite o telefone do candidato " + (i + 1) + ": ");
+            telefones[i] = scanner.nextLine();
+        }
+
+        System.out.println("\nCadastro finalizado. Iniciando votação...");
+
+        System.out.print("Digite quantos moradores irão votar: ");
+        int numMoradores = Integer.parseInt(scanner.nextLine());
+
+        for (int i = 0; i < numMoradores; i++) {
+            System.out.println("\nMorador " + (i + 1) + ", vote em um candidato:");
+            for (int j = 0; j < 5; j++) {
+                System.out.println((j + 1) + " - " + nomes[j]);
+            }
+            System.out.print("Digite o número do candidato: ");
+            int voto = Integer.parseInt(scanner.nextLine());
+
+            if (voto >= 1 && voto <= 5) {
+                votos[voto - 1]++;
+            } else {
+                System.out.println("Voto inválido! Nenhum voto computado para essa tentativa.");
+            }
+        }
+
+        System.out.println("\nResultado da votação:");
+        for (int i = 0; i < 5; i++) {
+            System.out.println(nomes[i] + " recebeu " + votos[i] + " voto(s).");
+        }
+
+        int maxVotos = votos[0];
+        int indiceVencedor = 0;
+        boolean empate = false;
+
+        for (int i = 1; i < 5; i++) {
+            if (votos[i] > maxVotos) {
+                maxVotos = votos[i];
+                indiceVencedor = i;
+                empate = false;
+            } else if (votos[i] == maxVotos) {
+                empate = true;
+            }
+        }
+
+        if (empate) {
+            System.out.println("Houve um empate na votação.");
+        } else {
+            System.out.println("O vencedor é: " + nomes[indiceVencedor] + " com " + maxVotos + " voto(s).");
+        }
+
+        scanner.close();
+    }
+}
