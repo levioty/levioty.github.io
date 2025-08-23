@@ -1,0 +1,80 @@
+import java.util.*;
+
+class Candidato {
+    String nome;
+    int numero;
+    int votos;
+
+    Candidato(String nome, int numero) {
+        this.nome = nome;
+        this.numero = numero;
+        this.votos = 0;
+    }
+}
+
+public class Votacao {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Quantos candidatos? ");
+        int qtd = Integer.parseInt(sc.nextLine());
+        List<Candidato> candidatos = new ArrayList<>();
+
+        for (int i = 0; i < qtd; i++) {
+            System.out.print("Nome do candidato " + (i + 1) + ": ");
+            String nome = sc.nextLine();
+            System.out.print("Número do candidato: ");
+            int numero = Integer.parseInt(sc.nextLine());
+            candidatos.add(new Candidato(nome, numero));
+        }
+
+        System.out.println("\nCandidatos cadastrados:");
+        for (Candidato c : candidatos) {
+            System.out.println(c.numero + " = " + c.nome);
+        }
+
+        System.out.println("\nInício da votação:");
+        while (true) {
+            System.out.println("\nCandidatos:");
+            for (Candidato c : candidatos) {
+                System.out.println(c.numero + " - " + c.nome);
+            }
+            System.out.print("Digite o número do candidato (ou -1 para encerrar): ");
+            int voto = Integer.parseInt(sc.nextLine());
+            if (voto < 0) break;
+
+            boolean valido = false;
+            for (Candidato c : candidatos) {
+                if (c.numero == voto) {
+                    c.votos++;
+                    valido = true;
+                    break;
+                }
+            }
+            if (!valido) {
+                System.out.println("Número inválido, tente novamente!");
+            }
+        }
+
+        int totalVotos = 0;
+        for (Candidato c : candidatos) {
+            totalVotos += c.votos;
+        }
+
+        // ordena os candidatos
+        candidatos.sort((a, b) -> Integer.compare(b.votos, a.votos));
+
+        // result
+        System.out.println("\nResultado final:");
+        for (Candidato c : candidatos) {
+            double perc = totalVotos > 0 ? (c.votos * 100.0 / totalVotos) : 0;
+            System.out.printf("%s (%d) - %d votos (%.2f%%)%n", c.nome, c.numero, c.votos, perc);
+        }
+
+        // vencedo
+        if (!candidatos.isEmpty()) {
+            Candidato vencedor = candidatos.get(0);
+            System.out.println("\nVencedor: " + vencedor.nome + " (" + vencedor.numero + ")");
+        }
+    }
+}
