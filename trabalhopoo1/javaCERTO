@@ -46,7 +46,7 @@ public class Votacao {
                 System.out.print("Nome do candidato " + (i + 1) + ": ");
                 nome = sc.nextLine().trim();
                 if (!nomeValido(nome)) {
-                    System.out.println("Nome inválido, não deve conter números, tente novamente.");
+                    System.out.println("Nome inválido, não deve conter letras, tente novamente.");
                 } else if (nome.isEmpty()) {
                     System.out.println("Nome não pode ser vazio. Tente novamente.");
                 } else {
@@ -59,7 +59,7 @@ public class Votacao {
                 System.out.print("Número do candidato: ");
                 numStr = sc.nextLine().trim();
                 if (!numeroValido(numStr)) {
-                    System.out.println("Número inválido, deve conter apenas letras, tente novamente.");
+                    System.out.println("Valor inválido, deve conter apenas números, tente novamente.");
                 } else {
                     break;
                 }
