@@ -137,7 +137,7 @@ GO
 
 
 
-CREATE PROCEDURE sp_CadastraNotas
+CREATE OR ALTER PROCEDURE sp_CadastraNotas
 	(
 		@MATRICULA INT,
 		@CURSO CHAR(3),
@@ -273,3 +273,23 @@ INSERT MATRICULA (MATRICULA, CURSO, MATERIA,PROFESSOR,PERLETIVO)
 VALUES (2,'SIS','APS',3,2025)
 
 SELECT * FROM MATRICULA
+
+EXEC sp_CadastraNotas @MATRICULA = 2,      -- int
+                      @CURSO = 'ENG',      -- char(3)
+                      @MATERIA = 'BDA',    -- char(3)
+                      @PERLETIVO = '2025', -- char(4)
+                      @NOTA = 9.0,         -- float
+                      @FALTA = 2,
+                      @BIMESTRE = 4      -- int
+
+INSERT MATERIAS VALUES ('JAV', 'JAVA', 144, 'SIS', 3)
+
+INSERT MATRICULA VALUES (2, 'SIS', 'JAV', 3, 2025)
+
+EXEC sp_CadastraNotas @MATRICULA = 2,      -- int
+                      @CURSO = 'SIS',      -- char(3)
+                      @MATERIA = 'APS',    -- char(3)
+                      @PERLETIVO = '2025', -- char(4)
+                      @NOTA = 4.0,         -- float
+                      @FALTA = 2,
+                      @BIMESTRE = 4      -- int
