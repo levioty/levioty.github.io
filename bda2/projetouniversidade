@@ -219,7 +219,11 @@ BEGIN
                     F4 = @FALTA,
                     TOTALPONTOS = @NOTA + N1 + N2 + N3,
                     TOTALFALTAS = @FALTA + F1 + F2 + F3,
-                    MEDIA = (@NOTA + N1 + N2 + N3) / 4
+                    MEDIA = (@NOTA + N1 + N2 + N3) / 4,
+                RESULTADO = CASE WHEN N1 + N2 + N3 + @NOTA /4 >= 7 THEN 'APROVADO'
+                         WHEN N1 + N2 + N3 + @NOTA /4 >= 3 AND N1 + N2 + N3 + @NOTA /4 < 7 THEN 'EXAME'
+                         WHEN N1 + N2 + N3 + @NOTA /4 < 3 THEN 'REPROVADO' 
+                         END
                 WHERE MATRICULA = @MATRICULA
                     AND CURSO = @CURSO
                     AND MATERIA = @MATERIA
