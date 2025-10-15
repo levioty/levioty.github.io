@@ -220,9 +220,9 @@ BEGIN
                     TOTALPONTOS = @NOTA + N1 + N2 + N3,
                     TOTALFALTAS = @FALTA + F1 + F2 + F3,
                     MEDIA = (@NOTA + N1 + N2 + N3) / 4,
-                RESULTADO = CASE WHEN N1 + N2 + N3 + @NOTA /4 >= 7 THEN 'APROVADO'
-                         WHEN N1 + N2 + N3 + @NOTA /4 >= 3 AND N1 + N2 + N3 + @NOTA /4 < 7 THEN 'EXAME'
-                         WHEN N1 + N2 + N3 + @NOTA /4 < 3 THEN 'REPROVADO' 
+                RESULTADO = CASE WHEN (N1 + N2 + N3 + @NOTA) /4 >= 7 THEN 'APROVADO'
+                         WHEN (N1 + N2 + N3 + @NOTA) /4 >= 3 AND (N1 + N2 + N3 + @NOTA) /4 < 7 THEN 'EXAME'
+                         WHEN (N1 + N2 + N3 + @NOTA) /4 < 3 THEN 'REPROVADO' 
                          END
                 WHERE MATRICULA = @MATRICULA
                     AND CURSO = @CURSO
@@ -287,9 +287,9 @@ INSERT MATERIAS VALUES ('JAV', 'JAVA', 144, 'SIS', 3)
 INSERT MATRICULA VALUES (2, 'SIS', 'JAV', 3, 2025)
 
 EXEC sp_CadastraNotas @MATRICULA = 2,      -- int
-                      @CURSO = 'SIS',      -- char(3)
-                      @MATERIA = 'APS',    -- char(3)
+                      @CURSO = 'ENG',      -- char(3)
+                      @MATERIA = 'BDA',    -- char(3)
                       @PERLETIVO = '2025', -- char(4)
-                      @NOTA = 4.0,         -- float
+                      @NOTA = 1.0,         -- float
                       @FALTA = 2,
                       @BIMESTRE = 4      -- int
