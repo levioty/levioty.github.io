@@ -233,7 +233,7 @@ BEGIN
                          WHEN (N1 + N2 + N3 + @NOTA) /4 >= 3 AND (N1 + N2 + N3 + @NOTA) /4 < 7 THEN 'EXAME'
                          WHEN (N1 + N2 + N3 + @NOTA) /4 < 3 THEN 'REPROVADO'
                          END
-                
+                UPDATE MATRICULA
                 SET RESULTADO = 
                     CASE 
                         WHEN PERCFREQ < 75 THEN 'REPROVADO POR FALTA'
@@ -241,7 +241,7 @@ BEGIN
                         WHEN MEDIA >= 3 AND MEDIA < 7 THEN 'EXAME'
                         ELSE 'REPROVADO'
                     END
-                        
+
                 WHERE MATRICULA = @MATRICULA
                     AND CURSO = @CURSO
                     AND MATERIA = @MATERIA
@@ -307,8 +307,8 @@ EXEC sp_CadastraNotas @MATRICULA = 2,      -- int
                       @CURSO = 'ENG',      -- char(3)
                       @MATERIA = 'BDA',    -- char(3)
                       @PERLETIVO = '2025', -- char(4)
-                      @NOTA = 1.0,         -- float
-                      @FALTA = 33,
+                      @NOTA = 0.0,         -- float
+                      @FALTA = 3,
                       @BIMESTRE = 4      -- int
 
 SELECT * FROM ALUNOS
