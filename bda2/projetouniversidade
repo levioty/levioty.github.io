@@ -207,12 +207,20 @@ BEGIN
                 DECLARE @RESULTADO VARCHAR(50),
                         @FREQUENCIA FLOAT,
                         @MEDIAFINAL FLOAT,
-                        @CARGAHORA INT 
+                        @CARGAHORA INT,
+                        @TOTALFALTAS INT,
+                        @MEDIA FLOAT
                 
                 SET @CARGAHORA = (
                     SELECT CARGAHORARIA FROM MATERIAS 
                     WHERE       SIGLA = @MATERIA
                             AND CURSO = @CURSO)
+
+                SELECT @TOTALFALTAS = TOTALFALTAS FROM MATRICULA
+                 WHERE MATRICULA = @MATRICULA
+                    AND CURSO = @CURSO
+                    AND MATERIA = @MATERIA
+                    AND PERLETIVO = @PERLETIVO;
 
                 UPDATE MATRICULA
                 SET N4 = @NOTA,
@@ -220,15 +228,24 @@ BEGIN
                     TOTALPONTOS = @NOTA + N1 + N2 + N3,
                     TOTALFALTAS = @FALTA + F1 + F2 + F3,
                     MEDIA = (@NOTA + N1 + N2 + N3) / 4,
+                    PERCFREQ = (((@FALTA + F1 + F2 + F3) * 100.0) / (@CARGAHORA/2) -100) * (-1),
                 RESULTADO = CASE WHEN (N1 + N2 + N3 + @NOTA) /4 >= 7 THEN 'APROVADO'
                          WHEN (N1 + N2 + N3 + @NOTA) /4 >= 3 AND (N1 + N2 + N3 + @NOTA) /4 < 7 THEN 'EXAME'
-                         WHEN (N1 + N2 + N3 + @NOTA) /4 < 3 THEN 'REPROVADO' 
+                         WHEN (N1 + N2 + N3 + @NOTA) /4 < 3 THEN 'REPROVADO'
                          END
+                
+                SET RESULTADO = 
+                    CASE 
+                        WHEN PERCFREQ < 75 THEN 'REPROVADO POR FALTA'
+                        WHEN MEDIA >= 7 THEN 'APROVADO'
+                        WHEN MEDIA >= 3 AND MEDIA < 7 THEN 'EXAME'
+                        ELSE 'REPROVADO'
+                    END
+                        
                 WHERE MATRICULA = @MATRICULA
                     AND CURSO = @CURSO
                     AND MATERIA = @MATERIA
                     AND PERLETIVO = @PERLETIVO;
-
 
             END
             
@@ -291,5 +308,9 @@ EXEC sp_CadastraNotas @MATRICULA = 2,      -- int
                       @MATERIA = 'BDA',    -- char(3)
                       @PERLETIVO = '2025', -- char(4)
                       @NOTA = 1.0,         -- float
-                      @FALTA = 2,
+                      @FALTA = 33,
                       @BIMESTRE = 4      -- int
+
+SELECT * FROM ALUNOS
+
+SELECT * FROM MATERIAS
