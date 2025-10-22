@@ -248,6 +248,13 @@ BEGIN
                     AND PERLETIVO = @PERLETIVO;
 
             END
+
+        IF @BIMESTRE = 5
+            BEGIN
+
+        UPDATE MATRICULA
+                SET NOTAEXAME = @NOTA,
+                MEDIA = (@MEDIA + NOTAEXAME) /2
             
 
 		SELECT * FROM MATRICULA	WHERE MATRICULA = @MATRICULA
