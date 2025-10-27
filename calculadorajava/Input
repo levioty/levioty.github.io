@@ -1,0 +1,16 @@
+package calculadora;
+
+import java.util.Scanner;
+
+public class EntradaUsuario {
+    private Scanner scanner;
+
+    public EntradaUsuario(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
+    public double lerNumero(String mensagem) {
+        System.out.print(mensagem);
+        return scanner.nextDouble();
+    }
+}
