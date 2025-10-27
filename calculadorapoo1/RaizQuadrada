@@ -1,0 +1,19 @@
+public class RaizQuadrada extends Operacao {
+    public RaizQuadrada(double num1) {
+        super(num1);
+    }
+
+    @Override
+    public double executar() {
+        if (num1 < 0) {
+            System.out.println("Erro: número negativo!");
+            return Double.NaN;
+        }
+        return Math.sqrt(num1);
+    }
+
+    @Override
+    public String toString() {
+        return "√" + num1;
+    }
+}
