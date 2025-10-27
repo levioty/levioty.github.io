@@ -1,11 +1,9 @@
-package calculadora;
-
 import java.util.Scanner;
 
-public class EntradaUsuario {
+public class Input {
     private Scanner scanner;
 
-    public EntradaUsuario(Scanner scanner) {
+    public Input(Scanner scanner) {
         this.scanner = scanner;
     }
 
