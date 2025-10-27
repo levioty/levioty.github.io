@@ -1,0 +1,18 @@
+public class Calculadora {
+    private Historico historico; // composição
+
+    public Calculadora() {
+        this.historico = new Historico();
+    }
+
+    public void calcular(Operacao operacao) {
+        double resultado = operacao.executar();
+        String registro = operacao.toString() + " = " + resultado;
+        historico.adicionar(registro);
+        System.out.println("Resultado: " + resultado);
+    }
+
+    public void mostrarHistorico() {
+        historico.listar();
+    }
+}
