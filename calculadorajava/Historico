@@ -1,0 +1,21 @@
+package calculadora;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Historico {
+    private List<String> operacoes = new ArrayList<>();
+
+    public void adicionar(String operacao) {
+        operacoes.add(operacao);
+    }
+
+    public void listar() {
+        if (operacoes.isEmpty()) {
+            System.out.println("Histórico vazio.");
+            return;
+        }
+        System.out.println("=== Histórico de Operações ===");
+        operacoes.forEach(System.out::println);
+    }
+}
