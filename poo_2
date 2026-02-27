@@ -90,3 +90,49 @@ public class Main {
     }
 
 }
+
+
+----------
+
+import java.sql.*;
+
+public class Main {
+
+
+    public static void main(String[] args) {
+        var url = "jdbc:mysql://localhost:3306/Teste";
+        var user = "root";
+        var password = "univille";
+        // try-with-resources
+        var insert = """
+                INSERT INTO testeteste (dinheiro,data,hora,datahora) VALUES (5, '2026-02-26', 12, '2026-06-26 14:30:00');
+                """;
+        try(var con = DriverManager.getConnection(url,user,password);
+            var st = con.createStatement();) {
+            var pre = con.prepareStatement(insert);{
+                pre.execute();
+
+
+
+
+            }
+            System.out.println("Conectado!");
+
+
+//            var create
+//            var update = """
+//                    update nome set nome = 'Tom Holland' where id = 1
+//                    """;
+//            //st.executeUpdate(update);
+//            var delete = """
+//                    delete from nome;
+//                    """;
+//            //st.execute(delete);
+
+        }catch (SQLException e){
+            System.out.println("Deu erro!");
+            e.printStackTrace();
+        }
+    }
+
+}
